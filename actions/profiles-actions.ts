@@ -61,6 +61,14 @@ export async function deleteProfileAction(userId: string): Promise<ActionResult<
  */
 export async function checkPaymentFailedAction(): Promise<{ paymentFailed: boolean }> {
   try {
+    // DEVELOPMENT MODE: Skip auth check
+    const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+    
+    if (DISABLE_AUTH_FOR_DEV) {
+      console.log("🚧 DEVELOPMENT MODE: Skipping auth in checkPaymentFailedAction");
+      return { paymentFailed: false };
+    }
+    
     const { userId } = auth();
     
     if (!userId) {
@@ -90,6 +98,27 @@ export async function getUserPlanInfoAction(): Promise<ActionResult<{
   nextCreditRenewal: Date | null;
 } | null>> {
   try {
+    // DEVELOPMENT MODE: Return mock plan info
+    const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+    
+    if (DISABLE_AUTH_FOR_DEV) {
+      console.log("🚧 DEVELOPMENT MODE: Returning mock plan info");
+      return {
+        isSuccess: true,
+        message: "Mock plan information retrieved successfully",
+        data: {
+          membership: "free",
+          planDuration: null,
+          status: "active",
+          usageCredits: 5,
+          usedCredits: 0,
+          billingCycleStart: null,
+          billingCycleEnd: null,
+          nextCreditRenewal: null
+        }
+      };
+    }
+    
     const { userId } = auth();
     
     if (!userId) {

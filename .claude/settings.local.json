@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\actions/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\types\\actions/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\components\\ui/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\components\\ui/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\lib/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\actions/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\actions/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\actions/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\actions/**)",
+      "Bash(npm run type-check:*)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\db/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\db\\schema/**)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\actions/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\db\\schema/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\app\\(marketing)/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\app\\(marketing)\\components/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\app\\(marketing)\\components/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\app\\(marketing)\\components/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\app\\(marketing)\\components/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\app\\dashboard/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\components/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\components\\sold-price/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\utils/**)",
+      "Read(/C:\\Users\\Dell\\Documents\\Cursor\\apps_build\\property-saas\\components\\sold-price/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -163,6 +163,22 @@ export async function checkCredits(
   requiredCredits: number = 1
 ): Promise<{ hasCredits: boolean; profile: any | null; error?: string }> {
   try {
+    // DEVELOPMENT MODE: Return mock success
+    const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+    
+    if (DISABLE_AUTH_FOR_DEV) {
+      console.log("🚧 DEVELOPMENT MODE: Bypassing credit check");
+      return { 
+        hasCredits: true, 
+        profile: {
+          userId: "dev-user-123",
+          membership: "free",
+          usageCredits: 5,
+          usedCredits: 0
+        }
+      };
+    }
+    
     const { userId } = auth();
     
     if (!userId) {
@@ -278,6 +294,22 @@ export async function useCredits(
   description: string = "Used feature"
 ): Promise<{ success: boolean; profile?: any; error?: string }> {
   try {
+    // DEVELOPMENT MODE: Return mock success
+    const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+    
+    if (DISABLE_AUTH_FOR_DEV) {
+      console.log(`🚧 DEVELOPMENT MODE: Mock using ${creditsToUse} credits for: ${description}`);
+      return { 
+        success: true, 
+        profile: {
+          userId: "dev-user-123",
+          membership: "free",
+          usageCredits: 5,
+          usedCredits: 0
+        }
+      };
+    }
+    
     const { userId } = auth();
     
     if (!userId) {
@@ -333,6 +365,21 @@ export async function getCreditStatus(): Promise<{
   error?: string;
 }> {
   try {
+    // DEVELOPMENT MODE: Return mock credit status
+    const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+    
+    if (DISABLE_AUTH_FOR_DEV) {
+      console.log("🚧 DEVELOPMENT MODE: Returning mock credit status");
+      return {
+        total: 5,
+        used: 0,
+        remaining: 5,
+        nextBillingDate: null,
+        nextCreditRenewal: null,
+        membership: "free"
+      };
+    }
+    
     const { userId } = auth();
     
     if (!userId) {
@@ -397,6 +444,14 @@ export async function getCreditStatus(): Promise<{
  */
 export async function hasReachedCreditLimit(): Promise<boolean> {
   try {
+    // DEVELOPMENT MODE: Return false (no limit reached)
+    const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+    
+    if (DISABLE_AUTH_FOR_DEV) {
+      console.log("🚧 DEVELOPMENT MODE: Bypassing credit limit check");
+      return false;
+    }
+    
     const { userId } = auth();
     
     if (!userId) {

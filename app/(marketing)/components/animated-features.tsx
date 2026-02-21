@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Code, Database, Lock } from "lucide-react";
+import { Check, MapPin, TrendingUp, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Animation variants
@@ -34,9 +34,9 @@ export default function AnimatedFeatures() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Powerful Features</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Features</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Everything you need to build and scale your projects
+          Comprehensive UK property data to make more accurate decisions
         </p>
       </motion.div>
 
@@ -51,14 +51,14 @@ export default function AnimatedFeatures() {
           <Card>
             <CardHeader>
               <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
-                <Code className="h-6 w-6 text-primary" />
+                <Search className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle>Modern Stack</CardTitle>
-              <CardDescription>Built with Next.js, Tailwind CSS, and ShadCN UI</CardDescription>
+              <CardTitle>Property Search</CardTitle>
+              <CardDescription>Advanced search with UK address autocomplete and postcode lookup</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
-                {["Server components", "Type safety", "Fast rendering"].map((feature) => (
+                {["Instant address suggestions", "Postcode validation", "Location-based filtering"].map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
                     <Check className="h-4 w-4 text-primary" />
                     <span>{feature}</span>
@@ -73,14 +73,14 @@ export default function AnimatedFeatures() {
           <Card>
             <CardHeader>
               <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
-                <Database className="h-6 w-6 text-primary" />
+                <TrendingUp className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle>Robust Backend</CardTitle>
-              <CardDescription>Supabase and Drizzle integration for seamless data management</CardDescription>
+              <CardTitle>Sold Price Analytics</CardTitle>
+              <CardDescription>Comprehensive Land Registry data with detailed property transaction history</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
-                {["SQL queries", "Data validation", "Real-time updates"].map((feature) => (
+                {["Historical price trends", "Transaction details", "Market insights"].map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
                     <Check className="h-4 w-4 text-primary" />
                     <span>{feature}</span>
@@ -95,14 +95,14 @@ export default function AnimatedFeatures() {
           <Card>
             <CardHeader>
               <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
-                <Lock className="h-6 w-6 text-primary" />
+                <MapPin className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle>Secure Authentication</CardTitle>
-              <CardDescription>Clerk authentication with flexible options</CardDescription>
+              <CardTitle>Area Intelligence</CardTitle>
+              <CardDescription>Deep neighbourhood insights and property market understanding</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
-                {["Social logins", "Role-based access", "OAuth integration"].map((feature) => (
+                {["Local market data", "Price comparisons", "Investment potential"].map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
                     <Check className="h-4 w-4 text-primary" />
                     <span>{feature}</span>

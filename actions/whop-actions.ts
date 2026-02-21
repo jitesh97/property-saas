@@ -107,6 +107,14 @@ export const manageWhopMembershipStatusChange = async (
 
 // Check if the current user can access a premium feature
 export async function canAccessPremiumFeatures() {
+  // DEVELOPMENT MODE: Return true to allow access
+  const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+  
+  if (DISABLE_AUTH_FOR_DEV) {
+    console.log("🚧 DEVELOPMENT MODE: Allowing premium features access");
+    return true;
+  }
+  
   const { userId } = auth();
   
   if (!userId) {

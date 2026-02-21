@@ -3,8 +3,16 @@ import { NextResponse } from "next/server";
 
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
 
+// DEVELOPMENT MODE: Disable Clerk auth temporarily
+const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+
 // This handles both payment provider use cases from whop-setup.md and stripe-setup.md
 export default clerkMiddleware(async (auth, req) => {
+  // DEVELOPMENT MODE: Skip all auth checks in development
+  if (DISABLE_AUTH_FOR_DEV) {
+    console.log("🚧 DEVELOPMENT MODE: Clerk auth disabled");
+    return NextResponse.next();
+  }
   // Skip auth for webhook endpoints
   if (req.nextUrl.pathname.startsWith('/api/whop/webhooks')) {
     console.log("Skipping Clerk auth for Whop webhook endpoint");

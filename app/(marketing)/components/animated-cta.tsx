@@ -16,14 +16,14 @@ export default function AnimatedCTA() {
     >
       <Card className="bg-primary text-primary-foreground">
         <CardHeader>
-          <CardTitle className="text-2xl md:text-3xl">Ready to get started?</CardTitle>
+          <CardTitle className="text-2xl md:text-3xl">Ready to explore UK property data?</CardTitle>
           <CardDescription className="text-primary-foreground/80">
-            Join thousands of developers building with our template
+            Join thousands of property hunters making smarter decisions
           </CardDescription>
         </CardHeader>
         <CardFooter className="flex flex-col sm:flex-row gap-4">
           <Button variant="secondary" size="lg" asChild>
-            <Link href="/dashboard">Get Started</Link>
+            <Link href="/dashboard">Start Hunting</Link>
           </Button>
           <Button
             variant="outline"

@@ -16,32 +16,32 @@ import AnimatedCTA from "./components/animated-cta";
 const reviews = [
   {
     name: "Michael K.",
-    title: "Software Engineer",
-    content: "This template saved me so much time. I was able to launch my MVP in just a few days instead of weeks. The code is clean and well-structured!",
+    title: "First-time Buyer",
+    content: "This platform helped me understand the London property market before making my first purchase. The sold price data showed me exactly what properties were really worth in different areas.",
     rating: 5
   },
   {
     name: "Sarah J.",
-    title: "Startup Founder",
-    content: "As a non-technical founder, this template was exactly what I needed. I've finally found a way to bring my ideas to life without hiring a full dev team.",
+    title: "Property Investor",
+    content: "The comprehensive analytics gave me insights I couldn't get anywhere else. I've made better investment decisions and avoided overpriced properties thanks to this data.",
     rating: 5
   },
   {
     name: "David L.",
-    title: "Full-stack Developer",
-    content: "The integration with Supabase and Clerk is seamless. Authentication, database, payments - everything just works out of the box. Truly impressive!",
+    title: "Estate Agent",
+    content: "Having access to detailed Land Registry data helps me provide better advice to my clients. The search functionality is incredibly fast and accurate.",
     rating: 5
   },
   {
     name: "Emily R.",
-    title: "Product Manager",
-    content: "We used this template as the foundation for our SaaS and it's been fantastic. The code quality and architecture decisions are exactly what we needed.",
+    title: "Property Developer",
+    content: "Understanding local market trends before acquiring sites has been game-changing. This platform provides the depth of data we need for due diligence.",
     rating: 5
   },
   {
     name: "Ryan T.",
-    title: "Indie Hacker",
-    content: "This template helped me launch my side project while keeping my day job. The documentation is clear and everything is well thought out.",
+    title: "Homeowner",
+    content: "I was curious about my neighbourhood's property values and this platform exceeded my expectations. The historical data and trends are fascinating and useful.",
     rating: 5
   }
 ];
@@ -84,9 +84,9 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-lg font-semibold mb-4">Template App</h3>
+              <h3 className="text-lg font-semibold mb-4">PropertyHunt</h3>
               <p className="text-muted-foreground max-w-md">
-                Build beautiful, functional web applications faster than ever with our comprehensive template solution.
+                Your ultimate destination for UK property data and insights. Make smarter property decisions with comprehensive market intelligence.
               </p>
               <div className="flex space-x-4 mt-6">
                 <Button variant="ghost" size="icon" asChild>
@@ -127,7 +127,7 @@ export default function HomePage() {
           
           <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Template App. All rights reserved.
+              © {new Date().getFullYear()} PropertyHunt. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Privacy Policy</Link>

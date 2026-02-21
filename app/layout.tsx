@@ -19,6 +19,31 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // DEVELOPMENT MODE: Skip auth checks and profile creation
+  const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+  
+  if (DISABLE_AUTH_FOR_DEV) {
+    console.log("🚧 DEVELOPMENT MODE: Skipping auth checks in root layout");
+    return (
+      <ClerkProvider>
+        <html lang="en">
+          <body className={inter.className}>
+            <Providers
+              attribute="class"
+              defaultTheme="light"
+              disableTransitionOnChange
+            >
+              <LayoutWrapper>
+                {children}
+              </LayoutWrapper>
+              <Toaster />
+            </Providers>
+          </body>
+        </html>
+      </ClerkProvider>
+    );
+  }
+
   const { userId } = auth();
 
   if (userId) {

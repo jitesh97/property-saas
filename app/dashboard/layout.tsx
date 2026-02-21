@@ -62,6 +62,51 @@ async function checkExpiredSubscriptionCredits(profile: any | null): Promise<any
 }
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
+  // DEVELOPMENT MODE: Skip auth checks and use mock data
+  const DISABLE_AUTH_FOR_DEV = process.env.NODE_ENV === 'development';
+  
+  if (DISABLE_AUTH_FOR_DEV) {
+    console.log("🚧 DEVELOPMENT MODE: Skipping auth checks in dashboard layout");
+    
+    // Mock profile for development
+    const mockProfile = {
+      userId: "dev-user-123",
+      email: "dev@example.com",
+      membership: "free" as const,
+      paymentProvider: "whop" as const,
+      stripeCustomerId: null,
+      stripeSubscriptionId: null,
+      whopUserId: null,
+      whopMembershipId: null,
+      planDuration: null,
+      billingCycleStart: null,
+      billingCycleEnd: null,
+      nextCreditRenewal: null,
+      usageCredits: 5,
+      usedCredits: 0,
+      status: "active",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    };
+
+    return (
+      <div className="flex h-screen bg-gray-50 relative overflow-hidden">
+        {/* Sidebar component with mock profile data */}
+        <Sidebar 
+          profile={mockProfile} 
+          userEmail="dev@example.com" 
+          whopMonthlyPlanId=""
+          whopYearlyPlanId=""
+        />
+        
+        {/* Main content area */}
+        <div className="flex-1 overflow-auto relative">
+          {children}
+        </div>
+      </div>
+    );
+  }
+
   // Fetch user profile once at the layout level
   const { userId } = auth();
 
